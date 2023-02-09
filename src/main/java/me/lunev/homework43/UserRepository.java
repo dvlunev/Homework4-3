@@ -6,11 +6,11 @@ public class UserRepository {
 
     private final List<User> users = new ArrayList<>();
 
-    Collection<User> getAllUsers() {
+    public Collection<User> getAllUsers() {
         return users;
     }
 
-    Optional<User> getUserByLogin(String login) {
+    public Optional<User> getUserByLogin(String login) {
         for (User user : users) {
             if (user.getLogin().equals(login)) {
                 return Optional.of(user);
@@ -19,7 +19,7 @@ public class UserRepository {
         return Optional.empty();
     }
 
-    Optional<User> getUserByLoginAndPassword(String login, String password) {
+    public Optional<User> getUserByLoginAndPassword(String login, String password) {
         for (User user : users) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return Optional.of(user);
